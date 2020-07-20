@@ -46,7 +46,7 @@
             this.numeric_posy = new System.Windows.Forms.NumericUpDown();
             this.numeric_posx = new System.Windows.Forms.NumericUpDown();
             this.button_add = new System.Windows.Forms.Label();
-            this.button_end = new System.Windows.Forms.Label();
+            this.button_save = new System.Windows.Forms.Label();
             this.Colors.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numeric_blue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numeric_green)).BeginInit();
@@ -107,7 +107,7 @@
             this.numeric_blue.Name = "numeric_blue";
             this.numeric_blue.Size = new System.Drawing.Size(120, 23);
             this.numeric_blue.TabIndex = 2;
-            numeric_blue.Maximum = 255;
+            this.numeric_blue.Maximum = 255;
             // 
             // numeric_green
             // 
@@ -233,31 +233,30 @@
             this.button_add.Text = "Add object";
             this.button_add.Click += new System.EventHandler(this.button_add_Click);
             // 
-            // button_end
+            // button_save
             // 
-            this.button_end.AutoSize = true;
-            this.button_end.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.button_end.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button_end.Location = new System.Drawing.Point(652, 81);
-            this.button_end.Name = "button_end";
-            this.button_end.Size = new System.Drawing.Size(87, 30);
-            this.button_end.TabIndex = 3;
-            this.button_end.Text = "End file";
-            this.button_end.Click += new System.EventHandler(this.button_end_Click);
+            this.button_save.AutoSize = true;
+            this.button_save.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.button_save.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button_save.Location = new System.Drawing.Point(652, 81);
+            this.button_save.Name = "button_save";
+            this.button_save.Size = new System.Drawing.Size(95, 30);
+            this.button_save.TabIndex = 3;
+            this.button_save.Text = "Save file";
+            this.button_save.Click += new System.EventHandler(this.button_save_Click);
             // 
             // Rectangle_generator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 134);
-            this.Controls.Add(this.button_end);
+            this.Controls.Add(this.button_save);
             this.Controls.Add(this.button_add);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.Colors);
             this.Name = "Rectangle_generator";
             this.Text = "Rectangle svg generator";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.Colors.ResumeLayout(false);
             this.Colors.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numeric_blue)).EndInit();
@@ -296,7 +295,7 @@
         private System.Windows.Forms.NumericUpDown numeric_posy;
         private System.Windows.Forms.NumericUpDown numeric_posx;
         private System.Windows.Forms.Label button_add;
-        private System.Windows.Forms.Label button_end;
+        private System.Windows.Forms.Label button_save;
     }
 }
 

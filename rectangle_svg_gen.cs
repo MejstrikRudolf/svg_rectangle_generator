@@ -18,30 +18,18 @@ namespace recrangle_svg_gen
             InitializeComponent();
         }
 
-        public void GetProperties()
-        {
-            properties = (numeric_width.Value, numeric_height.Value, numeric_posx.Value, numeric_posy.Value, (numeric_red.Value, numeric_green.Value, numeric_blue.Value));
-        }
-        
-        (decimal width, decimal height, decimal pos_x, decimal pos_y, (decimal red, decimal green, decimal blue) colors) properties;
-        StreamWriter sw = new StreamWriter("rectangles.svg");
+        Draw Draw = new Draw();
+
 
         private void button_add_Click(object sender, EventArgs e)
         {
-            GetProperties();
-            sw.WriteLine($"<rect x = \"{properties.pos_x}\" y = \"{properties.pos_y}\" width = \"{properties.width}\" height = \"{properties.height}\" style=\"fill: rgb{properties.colors}\" />");
+            Rectangle rectangle = new Rectangle(numeric_width.Value, numeric_height.Value, numeric_posx.Value, numeric_posy.Value, (numeric_red.Value, numeric_green.Value, numeric_blue.Value));
+            Draw.rectangles.Add(rectangle);
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void button_save_Click(object sender, EventArgs e)
         {
-            sw.WriteLine("<svg width = \"1000\" height = \"1000\" version = \"1.1\" xmlns = \"http://www.w3.org/2000/svg\" >");
-        }
-
-        private void button_end_Click(object sender, EventArgs e)
-        {
-            sw.Write("</svg>");
-            sw.Flush();
-            sw.Close();
+            Draw.draw();           
         }
        
 
