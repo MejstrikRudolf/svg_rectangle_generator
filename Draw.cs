@@ -26,7 +26,7 @@ namespace recrangle_svg_gen
             
             foreach (Rectangle rec in rectangles)
             {
-                sw.WriteLine($"<rect x = \"{rec.GetPosX()}\" y = \"{rec.GetPosY()}\" width = \"{rec.GetWidth()}\" height = \"{rec.GetHeight()}\" style=\"fill: rgb{rec.GetColors()}\" />");
+                sw.WriteLine($"<rect x = \"{rec.PosX}\" y = \"{rec.PosY}\" width = \"{rec.Width}\" height = \"{rec.Height}\" style=\"fill: rgb{rec.Color.getRGB()}\" />");
             }
 
         }

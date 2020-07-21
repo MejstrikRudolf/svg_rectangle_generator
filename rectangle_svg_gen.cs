@@ -23,7 +23,19 @@ namespace recrangle_svg_gen
 
         private void button_add_Click(object sender, EventArgs e)
         {
-            Rectangle rectangle = new Rectangle(numeric_width.Value, numeric_height.Value, numeric_posx.Value, numeric_posy.Value, (numeric_red.Value, numeric_green.Value, numeric_blue.Value));
+            var rectangle = new Rectangle()
+            {
+                Color = new Color
+                {
+                    Red = (short)numeric_red.Value,
+                    Green = (short)numeric_green.Value,
+                    Blue = (short)numeric_blue.Value
+                },
+                PosX = (int) numeric_posx.Value,
+                PosY = (int) numeric_posy.Value,
+                Width = (int) numeric_width.Value,
+                Height = (int) numeric_height.Value
+            };
             Draw.rectangles.Add(rectangle);
         }
 
